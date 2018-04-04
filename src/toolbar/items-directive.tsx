@@ -1,19 +1,22 @@
 import { ComplexBase } from '@syncfusion/ej2-react-base';
 import { ItemModel } from '@syncfusion/ej2-navigations';
 
+export interface ItemDirTypecast {
+    template?: string | Function;
+}
 /**
- * `ItemDirective` directive represent a column of the react Toolbar. 
+ * `ItemDirective` directive represent a item of the react Toolbar. 
  * It must be contained in a Toolbar component(`Toolbar`). 
  * ```tsx
- * <ToolbarComponent 
+ * <ToolbarComponent> 
  * <ItemsDirective>
- * <ItemDirective text='Cut'></e-item>
- * <ItemDirective text='Copy'></e-item>
+ * <ItemDirective text='Cut'></ItemDirective>
+ * <ItemDirective text='Copy'></ItemDirective>
  * <ItemsDirective>
- * </Toolbar>
+ * </ToolbarComponent>
  * ```
  */
-export class ItemDirective extends ComplexBase<ItemModel, ItemModel> {
+export class ItemDirective extends ComplexBase<ItemModel& ItemDirTypecast, ItemModel& ItemDirTypecast> {
     public static moduleName: string = 'item';
 }
 
