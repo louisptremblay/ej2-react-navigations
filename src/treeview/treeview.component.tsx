@@ -14,13 +14,13 @@ export interface TreeViewTypecast {
  */
 export class TreeViewComponent extends TreeView {
     public state: Readonly<{ children?: React.ReactNode | React.ReactNode[] }> 
-    & Readonly<TreeViewModel & DefaultHtmlAttributes& TreeViewTypecast>;
+    & Readonly<TreeViewModel & DefaultHtmlAttributes | TreeViewTypecast>;
     public setState: any;
     private getDefaultAttributes: Function;
     public initRenderCalled: boolean = false;
     private checkInjectedModules: boolean = true;
     public props: Readonly<{ children?: React.ReactNode | React.ReactNode[] }>
-     & Readonly<TreeViewModel & DefaultHtmlAttributes>;
+     & Readonly<TreeViewModel & DefaultHtmlAttributes | TreeViewTypecast>;
     public forceUpdate: (callBack?: () => any) => void;
     public context: Object;
     public isReactComponent: Object;
